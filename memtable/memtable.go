@@ -9,7 +9,7 @@ type MemTable interface {
 	Get(key []byte) ([]byte, bool) // 读取数据，第二个 bool flag 标识数据是否存在
 	All() []*KV                    // 返回所有的 kv 对数据
 	Size() int                     // 有序表内数据大小，单位 byte
-	EntriesCnt() int               // kv 对数量
+	EntriesCnt() int               // kv 对数量 d
 }
 
 type KV struct {

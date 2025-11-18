@@ -43,7 +43,7 @@ func (s *Skiplist) Put(key, value []byte) {
 	// roll 出新节点高度
 	newNodeHeight := s.roll()
 
-	// 倘若跳表原高度不足，则补齐高度
+	// 倘若跳表原高度不足，则补齐高度，level=0开始
 	if len(s.head.nexts) < newNodeHeight {
 		dif := make([]*skipNode, newNodeHeight+1-len(s.head.nexts))
 		s.head.nexts = append(s.head.nexts, dif...)
